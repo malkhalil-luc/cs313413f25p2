@@ -7,6 +7,7 @@ import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import org.junit.After;
 import org.junit.Before;
@@ -21,6 +22,7 @@ public class TestIterator {
   public void setUp() throws Exception {
     list = new ArrayList<Integer>();
     // TODO Question: Also try with a LinkedList - does it make any difference?
+    list = new LinkedList<Integer>();
   }
 
   @After

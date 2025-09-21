@@ -1,0 +1,10 @@
+ TestIterator.java:
+    TODO Question: Also try with a LinkedList - does it make any difference?
+        No difference; as test methods use iterator.
+        Iterator interface defined by the List interface, List interface extends Collection which in turn
+        extends Iterable.therefore, iterator is implemented by both ArrayList<> and LinkedList<>;
+        so it has the same behaviour in this scenario.
+
+    TODO fix the expected values in the assertions below
+        i.next():
+
