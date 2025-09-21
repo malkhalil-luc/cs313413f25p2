@@ -1,10 +1,92 @@
- TestIterator.java:
-    TODO Question: Also try with a LinkedList - does it make any difference?
-        No difference; as test methods use iterator.
-        Iterator interface defined by the List interface, List interface extends Collection which in turn
-        extends Iterable.therefore, iterator is implemented by both ArrayList<> and LinkedList<>;
-        so it has the same behaviour in this scenario.
+COMP 313/413 Project 2 Report Template
 
-    TODO fix the expected values in the assertions below
-        i.next():
+TestList.java and TestIterator.java
+
+	TODO also try with a LinkedList - does it make any difference?
+
+		No difference; as test methods rely on the iterator i.
+                Iterator interface defined by the List interface, List interface extends Collection which in turn
+                extends Iterable.therefore, iterator is implemented by both ArrayList<> and LinkedList<>;
+                so it has the same behaviour in this scenario.
+
+    TODO Question: What happens if you use list.remove(Integer.valueOf(77))?
+
+        The list is synchronized with the iterator cursor; using list .remove() will directly alter the list
+        which will cause inconsistency between the list and the iterator, using the iterator is safer to
+        remove elements can keep the consistency between the list and iterator because it will automatically adjust the state.
+        By using list.remove() an exception ConcurrentModificationException will be thrown.
+
+    TODO using assertEquals and List.of, express which values are left in the list
+
+        assertEquals(List.of(33, 44, 55, 66), list);
+
+    TODO use an iterator and a while loop to compute the average (mean) of the values
+
+         final var i = list.iterator();
+            while (i.hasNext()) {
+              sum += i.next().intValue();
+              n++;
+            }
+
+
+TestList.java
+
+	testRemoveObject()
+
+		list.remove(5); // what does this method do?
+
+			Your answer here.
+
+		list.remove(Integer.valueOf(5)); // what does this one do?
+
+			Your answer here.
+
+TestIterator.java
+
+	testRemove()
+
+		i.remove(); // what happens if you use list.remove(77)?
+
+			Your answer here.
+
+TestPerformance.java
+
+	State how many times the tests were executed for each SIZE (10, 100, 1000 and 10000)
+	to get the running time in milliseconds and how the test running times were recorded.
+
+	SIZE 10
+								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
+        testArrayListAddRemove:  val1 val2 val3 val4 val5 val6  ... (fill these in in ms)
+        testLinkedListAddRemove: val1 val2 val3 val4 val5 val6
+		testArrayListAccess:     val1 val2 val3 val4 val5 val6
+        testLinkedListAccess:    val1 val2 val3 val4 val5 val6
+
+	SIZE 100
+								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
+        testArrayListAddRemove:  val1 val2 val3 val4 val5 val6  ... (fill these in in ms)
+        testLinkedListAddRemove: val1 val2 val3 val4 val5 val6
+		testArrayListAccess:     val1 val2 val3 val4 val5 val6
+        testLinkedListAccess:    val1 val2 val3 val4 val5 val6
+
+	SIZE 1000
+								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
+        testArrayListAddRemove:  val1 val2 val3 val4 val5 val6  ... (fill these in in ms)
+        testLinkedListAddRemove: val1 val2 val3 val4 val5 val6
+		testArrayListAccess:     val1 val2 val3 val4 val5 val6
+        testLinkedListAccess:    val1 val2 val3 val4 val5 val6
+
+	SIZE 10000
+								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
+        testArrayListAddRemove:  val1 val2 val3 val4 val5 val6  ... (fill these in in ms)
+        testLinkedListAddRemove: val1 val2 val3 val4 val5 val6
+		testArrayListAccess:     val1 val2 val3 val4 val5 val6
+        testLinkedListAccess:    val1 val2 val3 val4 val5 val6
+
+	listAccess - which type of List is better to use, and why?
+
+		Your answer here.
+
+	listAddRemove - which type of List is better to use, and why?
+
+		Your answer here.
 
