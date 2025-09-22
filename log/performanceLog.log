@@ -1,0 +1,4 @@
+Sep 22, 2025 9:58:41 AM cs271.lab.list.TestPerformance setupLogger
+INFO: Log initialized...
+Sep 22, 2025 9:58:41 AM cs271.lab.list.TestPerformance testLinkedListAddRemove
+INFO:  testLinkedListAddRemove. Size:10000000, Execution time: 61ms

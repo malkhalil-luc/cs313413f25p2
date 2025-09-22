@@ -31,6 +31,7 @@ TestList.java and TestIterator.java
             }
 
 ____________________________________________________________________________________________________________
+
 TestList.java
 
     public void testSizeNonEmpty() {
@@ -137,6 +138,7 @@ TestList.java
                 assertEquals(List.of(44, 77, 55), list.subList(2, 5));
 
 ____________________________________________________________________________________________________________
+
 TestIterator.java
 
 	testRemove()
@@ -146,11 +148,20 @@ TestIterator.java
 		    result in IndexOutOfBoundsException.
 
 
+____________________________________________________________________________________________________________
 
 TestPerformance.java
 
+    ** The time is recorded using System.nanoTime(), System.currentTimeMillis(); can also be used but less precise.**
+    	see: https://www.baeldung.com/java-system-currenttimemillis-vs-system-nanotime
+    	     https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#nanoTime--
+    	     https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#currentTimeMillis--
+
 	State how many times the tests were executed for each SIZE (10, 100, 1000 and 10000)
 	to get the running time in milliseconds and how the test running times were recorded.
+
+
+
 
 	SIZE 10
 								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
@@ -182,9 +193,15 @@ TestPerformance.java
 
 	listAccess - which type of List is better to use, and why?
 
-		Your answer here.
+		ArrayList is better because it is indexed, with the index known it will take O(1),
+		but for the list, it will need to traverse all elements in the worst case which takes O(n)
+
 
 	listAddRemove - which type of List is better to use, and why?
 
-		Your answer here.
+        In most cases LinkedList as it only need to change where elements point (next, previous) .
+		LinkedList: takes O(1) to add at the beginning or end, and O(n) to add in the middle as traversal
+		through the list needed to find the position.
+		ArrayList will take O(n) most cases, as it relies on resizing the array and shifting elements.
+
 
