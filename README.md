@@ -4,18 +4,18 @@ An understanding of the following concepts and techniques:
 
 - algorithmic complexity
 - runtime performance
-  - how to measure
-  - how it relates to algorithmic complexity
+    - how to measure
+    - how it relates to algorithmic complexity
 - abstract data types (ADT)
 - array-based versus linked lists
 - getting started with iterators
 - automated unit testing using JUnit
-  - testing for exceptions
-  - test fixtures and assertions
-  
+    - testing for exceptions
+    - test fixtures and assertions
+
 # Instructions
 
-The key idea is to think about this lab like a physics experiment! 
+The key idea is to think about this lab like a physics experiment!
 You will set it up and then take measurements.
 
 1. Review the code.

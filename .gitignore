@@ -1,9 +1,10 @@
 # built application files
 *.apk
 *.ap_
-
+test2.java
 # files for the dex VM
 *.dex
+log/
 
 # Java class files
 *.class

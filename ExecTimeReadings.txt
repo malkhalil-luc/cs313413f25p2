@@ -1,0 +1,60 @@
+Input Size: 10
+
+ArrayList Access:      Average ET: 11.895ms 
+ 	 ETs Recorded: [12.389, 13.597, 11.145, 11.163, 11.181]
+
+LinkedList Access:     Average ET: 27.275ms 
+ 	 ETs Recorded: [30.669, 26.495, 25.978, 27.039, 26.195]
+
+ArrayList AddRemove:   Average ET: 108.746ms 
+ 	 ETs Recorded: [105.455, 110.821, 109.148, 108.946, 109.362]
+
+LinkedList AddRemove:  Average ET: 48.09ms 
+ 	 ETs Recorded: [63.965, 48.168, 42.456, 43.195, 42.666]
+
+____________________________________________
+Input Size: 100
+
+ArrayList Access:      Average ET: 11.301ms 
+ 	 ETs Recorded: [11.098, 10.931, 10.896, 12.639, 10.942]
+
+LinkedList Access:     Average ET: 130.255ms 
+ 	 ETs Recorded: [131.763, 130.253, 130.172, 129.301, 129.784]
+
+ArrayList AddRemove:   Average ET: 187.886ms 
+ 	 ETs Recorded: [190.312, 189.299, 185.915, 189.208, 184.694]
+
+LinkedList AddRemove:  Average ET: 42.301ms 
+ 	 ETs Recorded: [45.194, 40.996, 42.116, 41.238, 41.959]
+
+____________________________________________
+Input Size: 1000
+
+ArrayList Access:      Average ET: 10.956ms 
+ 	 ETs Recorded: [11.042, 10.944, 10.98, 10.893, 10.923]
+
+LinkedList Access:     Average ET: 2527.125ms 
+ 	 ETs Recorded: [2572.995, 2485.589, 2548.26, 2551.974, 2476.809]
+
+ArrayList AddRemove:   Average ET: 1519.878ms 
+ 	 ETs Recorded: [1515.456, 1529.714, 1515.931, 1508.132, 1530.155]
+
+LinkedList AddRemove:  Average ET: 40.916ms 
+ 	 ETs Recorded: [40.552, 41.137, 41.032, 41.003, 40.858]
+
+____________________________________________
+Input Size: 5000
+
+ArrayList Access:      Average ET: 10.938ms 
+ 	 ETs Recorded: [10.953, 10.971, 10.921, 10.898, 10.949]
+
+LinkedList Access:     Average ET: 11716.921ms 
+ 	 ETs Recorded: [11336.734, 11422.947, 11300.873, 11240.218, 13283.833]
+
+ArrayList AddRemove:   Average ET: 7707.529ms 
+ 	 ETs Recorded: [7698.116, 7708.883, 7719.136, 7707.212, 7704.3]
+
+LinkedList AddRemove:  Average ET: 41.083ms 
+ 	 ETs Recorded: [40.69, 41.547, 40.843, 41.696, 40.638]
+
+____________________________________________

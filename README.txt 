@@ -152,56 +152,87 @@ ________________________________________________________________________________
 
 TestPerformance.java
 
-    ** The time is recorded using System.nanoTime(), System.currentTimeMillis(); can also be used but less precise.**
+** The time is recorded using System.nanoTime(), System.currentTimeMillis(); can also be used but less precise.**
     	see: https://www.baeldung.com/java-system-currenttimemillis-vs-system-nanotime
     	     https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#nanoTime--
     	     https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#currentTimeMillis--
 
-	State how many times the tests were executed for each SIZE (10, 100, 1000 and 10000)
-	to get the running time in milliseconds and how the test running times were recorded.
+    TODO run test and record running times for SIZE = 10, 100, 1000, 10000, ...
+
+           Tests ran accoding to teh following fctors:
+                final int [] SIZES={10,100,1000,5000};  //5000 to finish tests faster.
+                final int REPEAT=5;
+                private final int REPS = 10000000;
+
+
+     TODO Question: What conclusions can you draw about the performance of LinkedList vs. ArrayList when
+      // comparing their running times for AddRemove vs. Access? Record those running times in README.txt!
+
+                Access:
+                    ArrayList: access time almost the same (close enough to be called constant) across different input sizes
+                            Average for each size respectively: 11.895ms , 11.301ms, 10.956ms , 10.938ms
+                    LinkedList: higher than ArrayList, and grows higher as the inputs grows.
+                            Average for each size respectively: 27.275ms, 130.255ms, 2527.125ms, 11716.921ms
+
+                AddRemove:
+                    ArrayList: higher than ArrayList, and grows higher as the inputs grows.
+                            Average for each size respectively: 108.746ms , 187.886ms , 1519.878ms , 7707.529ms
+                    LinkedList: almost the same (close enough to be called constant) across different input sizes
+                            Average for each size respectively: 48.09ms, 42.301ms , 40.916ms , 41.083ms
+
+
+      TODO (optional) refactor to DRY
+
+            PerformanceDry.java: some refactoring made to teh code, tests ran.
+
+      TODO which of the two lists performs better as the size increases?
+
+            At random access ArrayList.
+            At Add and Remove LinkedList.
 
 
 
+	TODO State how many times the tests were executed for each SIZE (10, 100, 1000 and 10000)
+	      to get the running time in milliseconds and how the test running times were recorded.
+
+	        >> The test was executed 5 times,
+	        the time recorded using System.nanoTime() and converted to ms by dividing by 1000.0 to get the double form
+	        stored after rounding to 3 decimal precision.
 
 	SIZE 10
-								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
-        testArrayListAddRemove:  val1 val2 val3 val4 val5 val6  ... (fill these in in ms)
-        testLinkedListAddRemove: val1 val2 val3 val4 val5 val6
-		testArrayListAccess:     val1 val2 val3 val4 val5 val6
-        testLinkedListAccess:    val1 val2 val3 val4 val5 val6
+								     #1   #2   #3   #4   #5   #6
+    ArrayList Access Test:        [12.389, 13.597, 11.145, 11.163, 11.181]
+    LinkedList Access Test:       [30.669, 26.495, 25.978, 27.039, 26.195]
+    ArrayList AddRemove Test:     [105.455, 110.821, 109.148, 108.946, 109.362]
+    LinkedList AddRemove Test:    [63.965, 48.168, 42.456, 43.195, 42.666]
 
 	SIZE 100
-								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
-        testArrayListAddRemove:  val1 val2 val3 val4 val5 val6  ... (fill these in in ms)
-        testLinkedListAddRemove: val1 val2 val3 val4 val5 val6
-		testArrayListAccess:     val1 val2 val3 val4 val5 val6
-        testLinkedListAccess:    val1 val2 val3 val4 val5 val6
+                                     #1   #2   #3   #4   #5   #6
+    ArrayList Access Test:        [11.098, 10.931, 10.896, 12.639, 10.942]
+    LinkedList Access Test:       [131.763, 130.253, 130.172, 129.301, 129.784]
+    ArrayList AddRemove Test:     [190.312, 189.299, 185.915, 189.208, 184.694]
+    LinkedList AddRemove Test:    [45.194, 40.996, 42.116, 41.238, 41.959]
 
 	SIZE 1000
-								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
-        testArrayListAddRemove:  val1 val2 val3 val4 val5 val6  ... (fill these in in ms)
-        testLinkedListAddRemove: val1 val2 val3 val4 val5 val6
-		testArrayListAccess:     val1 val2 val3 val4 val5 val6
-        testLinkedListAccess:    val1 val2 val3 val4 val5 val6
+                                    #1   #2   #3   #4   #5   #6
+    ArrayList Access Test:        [11.042, 10.944, 10.98, 10.893, 10.923]
+    LinkedList Access Test:       [2572.995, 2485.589, 2548.26, 2551.974, 2476.809]
+    ArrayList AddRemove Test:     [1515.456, 1529.714, 1515.931, 1508.132, 1530.155]
+    LinkedList AddRemove Test:    [40.552, 41.137, 41.032, 41.003, 40.858]
 
-	SIZE 10000
-								  #1   #2   #3   #4   #5   #6 	... (as many tests as you ran)
-        testArrayListAddRemove:  val1 val2 val3 val4 val5 val6  ... (fill these in in ms)
-        testLinkedListAddRemove: val1 val2 val3 val4 val5 val6
-		testArrayListAccess:     val1 val2 val3 val4 val5 val6
-        testLinkedListAccess:    val1 val2 val3 val4 val5 val6
+	SIZE 5000
+                                     #1   #2   #3   #4   #5   #6
+    ArrayList Access Test:        [10.953, 10.971, 10.921, 10.898, 10.949]
+    LinkedList Access Test:       [11336.734, 11422.947, 11300.873, 11240.218, 13283.833]
+    ArrayList AddRemove Test:     [7698.116, 7708.883, 7719.136, 7707.212, 7704.3]
+    LinkedList AddRemove Test:    [40.69, 41.547, 40.843, 41.696, 40.638]
 
 	listAccess - which type of List is better to use, and why?
 
-		ArrayList is better because it is indexed, with the index known it will take O(1),
-		but for the list, it will need to traverse all elements in the worst case which takes O(n)
-
+		ArrayList is better because it is indexed, and will access directly the element at a specific index,
+		with the index known it will take constant time
 
 	listAddRemove - which type of List is better to use, and why?
 
-        In most cases LinkedList as it only need to change where elements point (next, previous) .
-		LinkedList: takes O(1) to add at the beginning or end, and O(n) to add in the middle as traversal
-		through the list needed to find the position.
-		ArrayList will take O(n) most cases, as it relies on resizing the array and shifting elements.
-
+        LinkedList as it only needed to change where elements point (next, previous), did not require traversal.
 
