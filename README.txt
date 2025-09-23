@@ -1,4 +1,6 @@
-COMP 313/413 Project 2 Report Template
+COMP 313/413 Project 2 Report Template 
+
+*****SEE ExecTimeReadings.txt*******
 
 TestList.java and TestIterator.java
 
@@ -150,7 +152,7 @@ TestIterator.java
 
 ____________________________________________________________________________________________________________
 
-TestPerformance.java
+TestPerformance.java ********** SEE ExecTimeReadings.txt"
 
 ** The time is recorded using System.nanoTime(), System.currentTimeMillis(); can also be used but less precise.**
     	see: https://www.baeldung.com/java-system-currenttimemillis-vs-system-nanotime
@@ -188,7 +190,7 @@ TestPerformance.java
       TODO which of the two lists performs better as the size increases?
 
             At random access ArrayList.
-            At Add and Remove LinkedList.
+            At Add and Remove LinkedList head and tail.
 
 
 
