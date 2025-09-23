@@ -188,7 +188,7 @@ TestPerformance.java
       TODO which of the two lists performs better as the size increases?
 
             At random access ArrayList.
-            At Add and Remove LinkedList.
+            At Add and Remove LinkedList head and tail.
 
 
 
